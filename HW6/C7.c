@@ -8,16 +8,21 @@
 
 #include "stdio.h"
 
+/// @brief переводит число N из десятичной системы счисления в P-ичную систему счисления
+/// @param n число которое надо перевести
+/// @param p степень, в которую надо перевести
+/// @return число в P-ичной системе счисления
 int converter(int n, int p)
 {
-    int res = 0, i = 0;
-    do
+    int res = 0, i = 1;
+    while (n > 1)
     {
-        res += (n % p) * i;        
+        res += (n % p) * i;
         n /= p;
         i *= 10;
-    } while (n > 0);
+    }
 
+    res += i;
     return res;
 }
 
