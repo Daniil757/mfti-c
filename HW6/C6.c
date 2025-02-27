@@ -16,10 +16,10 @@
 /// @brief Вычислить количество зерен на клетке
 /// @param n - номер клетки
 /// @return вычисленное количество зерен
-int countGrains(int n)
+unsigned long long int countGrains(int n)
 {
-    int res = 1;
-    for (int i = 0; i < n; i++)
+    unsigned long long int res = 1;
+    for (int i = 1; i < n; i++)
     {
         res *= 2;
     }
@@ -29,9 +29,10 @@ int countGrains(int n)
 
 int main()
 {
+    unsigned long long int res = 0;
     int a = 0;
     scanf("%d", &a);
-    a = countGrains(a);
-    printf("%d", a);
+    res = countGrains(a);
+    printf("%llu", res);
     return 0;
 }

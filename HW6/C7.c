@@ -21,8 +21,8 @@ int converter(int n, int p)
         n /= p;
         i *= 10;
     }
-
-    res += i;
+    if (n != 0)
+        res += i;
     return res;
 }
 

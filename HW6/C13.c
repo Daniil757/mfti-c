@@ -2,12 +2,11 @@
  * @author Перевозчиков Даниил
  *
  * --------------------------------------
- * | C12 - Составить функцию, которая вычисляет синус как сумму ряда (с точностью 0.001)
+ * | C13 - Составить функцию, которая вычисляет косинус как сумму ряда (с точностью 0.001)
  * sin(x) = x - x3/3! + x5/5! - x7/7! + ...(x в радианах)
  * float sinus(float x) |
  * --------------------------------------
  */
-
 
 #include "stdio.h"
 
@@ -39,20 +38,18 @@ int factorial(int n)
     return res;
 }
 
-float sinus(int x)
-{
+float cosinus(int x) {
     float rad = x * (PI / 180.0);
-    float sum = 0.0;
-    float term = rad;  
-    int n = 1;     
+    float sum = 1.0; 
+    float term = 1.0; 
+    int n = 2;        
 
     const float precision = 0.001;
 
-    while (abs(term) >= precision)
-    {
-        sum += term;                           
-        n += 2;                                     
+    while (abs(term) >= precision) {
         term = -term * power(rad, 2) / (n * (n - 1)); 
+        sum += term; 
+        n += 2;     
     }
 
     return sum;
@@ -62,7 +59,7 @@ int main()
 {
     int a = 0;
     scanf("%d", &a);
-    printf("%.3f", sinus(a));
+    printf("%.3f", cosinus(a));
 
     return 0;
 }
