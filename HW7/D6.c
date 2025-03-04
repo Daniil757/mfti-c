@@ -12,10 +12,10 @@ void reverse_string()
 {
     char c;
     scanf("%c", &c);
-    if (c != '.') 
+    if (c != '.')  {
         reverse_string();
-
-    printf("%c", c);
+        printf("%c", c);
+    }    
 }
 
 int main()

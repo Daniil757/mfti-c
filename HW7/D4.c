@@ -13,7 +13,7 @@
 void print_num(int a)
 {
     if (a < 10) {
-        printf("%d", a);
+        printf("%d ", a);
         return;
     }
 
