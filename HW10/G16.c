@@ -1,7 +1,7 @@
 /**
  * @author Перевозчиков Даниил
  * --------------------------------------
- * @details - G15 - В файле input.txt дано предложение. Необходимо заменить все имена «Cao» на «Ling» и записать результат в файл output.txt.
+ * @details - G16 - В файле input.txt дано предложение. Необходимо заменить все имена «Ling» на «Cao» и результат записать в файл output.txt.
  * --------------------------------------
  */
 
@@ -12,7 +12,7 @@ int main()
 {
     FILE *input, *output;
     const char *path = ""; // E:\\!DANIIL\\Learn\\mfti-c\\HW10\\ //
-    char full_path[256] = {0}, *pos, *oldWord = "Cao", *newWord = "Ling";
+    char full_path[256] = {0}, *pos, *oldWord = "Ling", *newWord = "Cao";
     char str[1002] = {0}, buf[1002] = {0};
     int length = 0, i = 0;
 
@@ -23,7 +23,7 @@ int main()
     output = fopen(full_path, "w");
 
     fgets(str, sizeof(str), input);
-    char* cur = str;
+    char *cur = str;
 
     length = strlen(oldWord);
     // Проходим по строке и заменяем все вхождения "Cao" на "Ling"
