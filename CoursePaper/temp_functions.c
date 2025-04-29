@@ -12,7 +12,7 @@ int main(int argc, char *argv[])
 {
     setlocale(LC_ALL, "ru_RU.UTF-8");
 
-    char *filename = "data.csv";
+    char *filename = "temperature_small.csv";
     int month = -1; // -1 = все месяцы
 
     for (int i = 1; i < argc; i++)
@@ -71,6 +71,7 @@ int main(int argc, char *argv[])
 void process_csv(const char *filename, int month_filter)
 {
     int rec_count = 0;
+    int num_line = 3;
 
     printf("Обработка файла: %s\n", filename);
 
@@ -112,11 +113,13 @@ void process_csv(const char *filename, int month_filter)
         // Парсим строку
         if (!parse_csv_line(line, &records[rec_count]))
         {
-            fprintf(stderr, "Ошибка парсинга строки %d\n", rec_count + 1);
+            fprintf(stderr, "Ошибка парсинга строки %d\n", num_line);
+            num_line++;
             continue;
         }
         records[rec_count].id = rec_count + 1;
 
+        num_line++;
         rec_count++;
     }
 
