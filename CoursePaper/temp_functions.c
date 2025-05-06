@@ -12,7 +12,7 @@ int main(int argc, char *argv[])
 {
     setlocale(LC_ALL, "ru_RU.UTF-8");
 
-    char *filename = "temperature_small.csv";
+    char *filename = "temperature_big.csv";
     int month = -1; // -1 = все месяцы
 
     for (int i = 1; i < argc; i++)
